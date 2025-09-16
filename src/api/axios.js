@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create a global axios instance
 const API = axios.create({
-  baseURL: "http://127.0.0.1:8000/api/", // Django backend API
+  baseURL: "https://todo-backend-redrf.onrender.com/api/", // Django backend API
   timeout: 5000, // 5 seconds timeout
 });
 /* 
@@ -60,7 +60,7 @@ API.interceptors.response.use(
 
         // Requesting a new access token
         if (refreshToken) {
-          const { data } = await axios.post("http://127.0.0.1:8000/api/users/token/refresh/", {
+          const { data } = await axios.post("https://todo-backend-redrf.onrender.com/api/users/token/refresh/", {
             refresh: refreshToken,
           });
 
